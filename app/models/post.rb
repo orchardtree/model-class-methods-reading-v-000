@@ -5,7 +5,11 @@ class Post < ActiveRecord::Base
   belongs_to :author
 
   #put new code here
+  def self.by_author(author_id)
+    where(author: author_id)
+  end
 
+  
   private
 
   def is_title_case
